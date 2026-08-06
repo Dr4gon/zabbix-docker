@@ -124,6 +124,12 @@ services:
   extends:
    file: compose_databases.yaml
    service: postgres-server
+  secrets:
+   - POSTGRES_USER
+   - POSTGRES_PASSWORD
+  environment:
+   POSTGRES_USER_FILE: /run/secrets/POSTGRES_USER
+   POSTGRES_PASSWORD_FILE: /run/secrets/POSTGRES_PASSWORD 
 
  elasticsearch:
   extends:
