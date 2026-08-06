@@ -195,4 +195,4 @@ secrets:
     environment: POSTGRES_USER   # <- Coolify fíx to read env variable
   POSTGRES_PASSWORD:
     #file: ${ENV_VARS_DIRECTORY}/.POSTGRES_PASSWORD
-    environment: POSTGRES_USER}   # <- Coolify fíx to read env variable
+    environment: POSTGRES_USER   # <- Coolify fíx to read env variable
