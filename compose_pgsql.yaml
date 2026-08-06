@@ -191,8 +191,8 @@ secrets:
   MYSQL_ROOT_PASSWORD:
     file: ${ENV_VARS_DIRECTORY}/.MYSQL_ROOT_PASSWORD
   POSTGRES_USER:
-    file: ${ENV_VARS_DIRECTORY}/.POSTGRES_USER
-    content: ${POSTGRES_USER}   # <- Coolify extension to create file
+    #file: ${ENV_VARS_DIRECTORY}/.POSTGRES_USER
+    environment: ${POSTGRES_USER}   # <- Coolify fíx to read env variable
   POSTGRES_PASSWORD:
-    file: ${ENV_VARS_DIRECTORY}/.POSTGRES_PASSWORD
-    content: ${POSTGRES_USER}   # <- Coolify extension to create file
+    #file: ${ENV_VARS_DIRECTORY}/.POSTGRES_PASSWORD
+    environment: ${POSTGRES_USER}   # <- Coolify fíx to read env variable
