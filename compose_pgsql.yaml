@@ -9,6 +9,9 @@ services:
     condition: service_healthy
   labels:
    com.zabbix.os: "${OS}"
+  environment:
+   POSTGRES_USER: ${POSTGRES_USER}
+   POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
 
  proxy-db-init:
   extends:
@@ -124,6 +127,9 @@ services:
   extends:
    file: compose_databases.yaml
    service: postgres-server
+  environment:
+   POSTGRES_USER: ${POSTGRES_USER}
+   POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
 
  elasticsearch:
   extends:
@@ -181,10 +187,6 @@ volumes:
 #  mysql_socket: {}
 #  pgsql_socket: {}
 
-environment:
-  POSTGRES_USER: ${POSTGRES_USER}
-  POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-  
 secrets:
   MYSQL_USER:
     file: ${ENV_VARS_DIRECTORY}/.MYSQL_USER
