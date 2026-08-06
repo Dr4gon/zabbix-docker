@@ -64,9 +64,9 @@ services:
      required: true
    - path: ${ENV_VARS_DIRECTORY}/.env_db_pgsql_override
      required: false
-  secrets:
-   - POSTGRES_USER
-   - POSTGRES_PASSWORD
+  environment:
+    - POSTGRES_USER=${POSTGRES_USER}
+    - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
   stop_grace_period: 1m
   tmpfs: /tmp
   healthcheck:
