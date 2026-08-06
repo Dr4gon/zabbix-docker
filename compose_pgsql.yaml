@@ -180,9 +180,11 @@ volumes:
   snmptraps: {}
 #  mysql_socket: {}
 #  pgsql_socket: {}
+
 environment:
   POSTGRES_USER: ${POSTGRES_USER}
   POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+  
 secrets:
   MYSQL_USER:
     file: ${ENV_VARS_DIRECTORY}/.MYSQL_USER
