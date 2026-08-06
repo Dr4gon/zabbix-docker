@@ -154,9 +154,9 @@ services:
   env_file:
    - path: ${ENV_VARS_DIRECTORY}/.env_db_pgsql
      required: true
-  secrets:
-   - POSTGRES_USER
-   - POSTGRES_PASSWORD
+  environment:
+   - POSTGRES_USER=${POSTGRES_USER}
+   - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
   networks:
    backend:
      aliases:
